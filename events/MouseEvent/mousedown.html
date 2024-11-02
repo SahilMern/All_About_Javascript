@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drag and Drop Example</title>
+    <style>
+      #draggable {
+        width: 100px;
+        height: 100px;
+        background-color: lightblue;
+        position: absolute;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="draggable"></div>
+
+    <script>
+      const draggable = document.getElementById('draggable');
+      let isDragging = false;
+
+      draggable.addEventListener('mousedown', (event) => {
+        isDragging = true;
+        document.addEventListener('mousemove', onMouseMove);
+        document.addEventListener('mouseup', onMouseUp);
+      });
+
+      function onMouseMove(event) {
+        if (isDragging) {
+          draggable.style.left = `${event.clientX}px`;
+          draggable.style.top = `${event.clientY}px`;
+        }
+      }
+
+      function onMouseUp() {
+        isDragging = false;
+        document.removeEventListener('mousemove', onMouseMove);
+        document.removeEventListener('mouseup', onMouseUp);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>All About JAVASCRIPT EVENT</h1>
+
+     <!-- Onclick Event  -->
+    <button id="clickBtn">click</button> 
+
+    <input type="text" id="myInput" onchange="showAlert()" />
+    <script>
+        const clickBtn = document.getElementById("clickBtn");
+        console.log(clickBtn);
+        clickBtn.addEventListener("click", () => {
+            alert("Jai Bajarang bali")
+        })
+
+        const userinput = document.querySelector("#myInput")
+        console.log(userinput, "userinput");
+
+        function showAlert(){
+            // alert("Jai Bajarang bali")
+            
+        }
+        
+    </script>
+  </body>
+</html>

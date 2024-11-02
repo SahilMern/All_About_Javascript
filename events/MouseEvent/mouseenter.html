@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #draggable {
+        width: 100px;
+        height: 100px;
+        background-color: lightblue;
+        position: absolute;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="draggable"></div>
+
+    <script>
+      const draggable = document.getElementById("draggable");
+
+      draggable.addEventListener("mouseenter", (event) => {
+        console.log("Hey Mouse Enter Trigger");
+      });
+    </script>
+  </body>
+</html>

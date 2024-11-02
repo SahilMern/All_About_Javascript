@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blur Event Validation Example</title>
+  </head>
+  <body>
+    <h1>Blur Event Validation</h1>
+    
+    <input type="text" id="emailInput" placeholder="Enter your email" />
+    <p id="error"></p>
+
+    <script>
+      const emailInput = document.getElementById("emailInput");
+      const error = document.getElementById("error");
+
+      emailInput.addEventListener("blur", () => {
+        const emailValue = emailInput.value;
+        if (!validateEmail(emailValue)) {
+          error.textContent = "Invalid email address.";
+        } else {
+          error.textContent = "";
+        }
+      });
+
+      function validateEmail(email) {
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return regex.test(email);
+      }
+    </script>
+  </body>
+</html>

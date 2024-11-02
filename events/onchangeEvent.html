@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Onchange Example</title>
+  </head>
+  <body>
+    <h1>Using Onchange Event</h1>
+
+    <input type="text" id="myInput" onchange="showAlert()" />
+
+    <script>
+      const myInput = document.getElementById("myInput");
+
+      function showAlert() {
+        const inputValue = myInput.value; // Get the current input value
+        console.log(inputValue, "Writing Value");
+      }
+    </script>
+  </body>
+</html>

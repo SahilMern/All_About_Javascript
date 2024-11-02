@@ -361,3 +361,4 @@ const findMean = (numbers) => {
 let obj = {};
 obj["name"] = "value"
 // console.log(obj);s
+
