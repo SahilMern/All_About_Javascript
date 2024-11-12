@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="heading">Closure in JS</h1>
+    <button id="btn">Change Size</button>
+
+    <script>
+      const heading = document.getElementById("heading");
+      const button = document.getElementById("btn");
+
+      const changeFont = (number) => {
+        return function changeSize() {
+          heading.style.fontSize = `${number}px`;
+        };
+      };
+
+      const addFont90 = changeFont(30);
+      const addFont110 = changeFont(350);
+      const addFont150 = changeFont(230);
+
+      button.addEventListener("click", addFont110); // Now `addFont` will work
+    </script>
+  </body>
+</html>

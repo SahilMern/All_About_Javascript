@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1 id="heading">Closure in JS</h1>
+    <button id="btn">Change Size</button>
+
+    <script>
+        const heading = document.getElementById("heading");
+        const button = document.getElementById("btn");
+        
+        const changeFont = (number) => {
+             heading.style.fontSize = `${number}px`; 
+        };
+
+        // const addFont = changeFont(30); // Creates a closure with `number` = 30
+        // console.log(addFont, "Add font");
+        
+        button.addEventListener("click", () => changeFont(120));
+ // Now `addFont` will work
+    </script>
+</body>
+</html>
+
+
+
+<!-- 
+HUM AISE NAHI KAR SAKTE HAI KYUKI INTIAL PAGE LOAD KE TIME MAI ISKI VALUE 
+
+-->
