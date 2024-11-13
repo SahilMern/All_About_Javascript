@@ -1,29 +1,40 @@
-// Parent constructor function
-function Animal(name) {
-    this.name = name;
-  }
-  
-  Animal.prototype.sayHello = function() {
-    console.log(`Hello, I am ${this.name}`);
-  };
-  
-  // Child constructor function
-  function Dog(name, breed) {
-    Animal.call(this, name);  // Call the parent constructor
-    this.breed = breed;
-  }
-  
-  // Set up inheritance from Animal
-  Dog.prototype = Object.create(Animal.prototype);
-  Dog.prototype.constructor = Dog;
-  
-  // Add a method to Dog
-  Dog.prototype.bark = function() {
-    console.log(`${this.name} says Woof!`);
-  };
-  
-  // Create an instance of Dog
-  const myDog = new Dog('Buddy', 'Golden Retriever');
-  myDog.sayHello();  // Output: Hello, I am Buddy
-  myDog.bark();      // Output: Buddy says Woof!
-  
+function BankAccount(customerName, balance = 0) {
+    this.customerName = customerName;
+    this.accountNumber = Date.now();
+    this.balance = balance;
+}
+
+BankAccount.prototype.deposit = function (amount) {
+    this.balance += amount;
+};
+
+BankAccount.prototype.withdraw = function (amount) {
+    this.balance -= amount;
+};
+
+function CurrentAccount(customerName, balance = 0) {
+    BankAccount.call(this, customerName, balance);
+    this.transactionLimit = 50000;
+}
+
+CurrentAccount.prototype = Object.create(BankAccount.prototype);
+
+CurrentAccount.prototype.takeBusinessLoan = function (amount) {
+    console.log('Taking business loan: ' + amount);
+};
+
+function SavingAccount(customerName, balance = 0) {
+    BankAccount.call(this, customerName, balance);
+    this.transactionLimit = 10000;
+}
+SavingAccount.prototype = Object.create(BankAccount.prototype);
+
+SavingAccount.prototype.takePersonalLoan = function (amount) {
+    console.log('Taking personal loan: ' + amount);
+};
+
+const rakeshAccount = new SavingAccount('Rakesh K', 500);
+rakeshAccount.deposit(500);
+rakeshAccount.withdraw(100);
+rakeshAccount.takePersonalLoan(40000);
+// console.log(rakeshAccount);
