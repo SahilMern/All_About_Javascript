@@ -8,10 +8,20 @@
   <body>
     <h1 id="heading">Hey</h1>
     <script>
-    //   const data = document.body;
-    //   console.log(data.firstElementChild.style.color = "red");
+      console.log(this); //=global
+      const car = {
+        brand: "Toyota",
+        getBrand: function () {
+          return this.brand; // 'this' refers to the 'car' object
+        },
+      };
+      console.log(car.getBrand());
       
-    //   data.firstElementChild.firstElementChild.style.color = "red";
+
+      //   const data = document.body;
+      //   console.log(data.firstElementChild.style.color = "red");
+
+      //   data.firstElementChild.firstElementChild.style.color = "red";
     </script>
   </body>
 </html>
