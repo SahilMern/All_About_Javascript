@@ -1,22 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    
-    <input type="search" id="searchInput" placeholder="Search...">
+  </head>
+  <body>
+    <input type="search" id="searchInput" placeholder="Search..." />
     <script>
-        // Correct the variable name to searchValue
-        const searchValue = document.getElementById("searchInput");
-        console.log(searchValue.value, "search");
-        
-        // Log the value when the user types in the input field
-        searchValue.addEventListener("input", function() {
-        });
+      let timeout;
+      const debouncing = (value) => {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => {
+          console.log(value);
+          // alert(value)
+        }, 2000);
+      };
+      // Correct the variable name to searchValue
+      const searchValue = document.getElementById("searchInput");
+      console.log(searchValue.value, "search");
 
+      // Log the value when the user types in the input field
+      searchValue.addEventListener("input", function () {
+        // console.log(searchValue.value, "search");
+        const handleDebouncing = debouncing(searchValue.value);
+      });
     </script>
-</body>
+  </body>
 </html>
