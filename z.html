@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        min-height: 90vh;
+        padding: 4rem;
+        background-color: #eee;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
+      necessitatibus cumque quae alias, atque blanditiis fugit dolor cupiditate
+      distinctio voluptatem repellendus debitis quis quos, iusto harum aut
+      beatae veritatis nihil!
+      <button class="btn">ClickColor</button>
+    </div>
+    <script>
+      // const btn = document.getElementsByClassName("btn")
+      const btn = document.querySelector(".btn");
+      console.log(btn, "Btn");
+
+      const containerBackground = document.querySelector(".container");
+
+      btn.addEventListener("click", () => {
+        // alert("hey")
+        containerBackground.style.backgroundColor = "red";
+      });
+
+      btn.addEventListener("click", () => {
+        // alert("hey")
+        containerBackground.style.backgroundColor = "orange";
+      });
+
+      btn.addEventListener("click", () => {
+        // alert("hey")
+        containerBackground.style.backgroundColor = "pink";
+      });
+    </script>
+  </body>
+</html>
