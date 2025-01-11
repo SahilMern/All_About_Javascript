@@ -8,6 +8,7 @@ const findVowels = (str) => {
     }
   }
   return vowelsInWord;
+  
 };
 console.log(findVowels("sahil yadav"));
 
