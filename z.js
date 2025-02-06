@@ -1,13 +1,9 @@
-const factorial = (num) => {
-  if(num<0){
-    return "value cannot be nagative"
-  }
-  if(num===0 || num ===1){
-    return 1
-  }
 
-  return num* factorial(num-1)
-
+const sumOfSquare = (array) => {
+  let data = array.reduce((acc, elem, index) => {
+    return elem*elem +acc
+  }, 0)
+  console.log(data, "data");
+  
 }
-
-console.log(factorial(5));
+sumOfSquare([1, 2, 3, 4]);
