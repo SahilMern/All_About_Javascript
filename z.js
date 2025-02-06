@@ -1,29 +1,16 @@
-function doTask1(callback) {
-  setTimeout(() => {
-    console.log("Task 1 done");
-    callback();
-  }, 1000);
+const array = [10, 25, 55, 8];
+
+for (let i = 0; i < array.length; i++) {
+  console.log(array[i], "array[i]");
+  for (let j = 0; j < array.length; j++) {
+    if (array[j] > array[j + 1]) {
+      let temp = array[j];
+      array[j] = array[j + 1];
+      array[j + 1] = temp;
+    }
+    
+  }
 }
 
-function doTask2(callback) {
-  setTimeout(() => {
-    console.log("Task 2 done");
-    callback();
-  }, 1000);
-}
-
-function doTask3(callback) {
-  setTimeout(() => {
-    console.log("Task 3 done");
-    callback();
-  }, 1000);
-}
-
-// Callback Hell:
-doTask1(() => {
-  doTask2(() => {
-    doTask3(() => {
-      console.log("All tasks done");
-    });
-  });
-});
+console.log(array, "array");
+let secondLargestValue =  array.length-1;
