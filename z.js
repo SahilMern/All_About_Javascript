@@ -1,16 +1,13 @@
-const array = [10, 25, 55, 8];
-
-for (let i = 0; i < array.length; i++) {
-  console.log(array[i], "array[i]");
-  for (let j = 0; j < array.length; j++) {
-    if (array[j] > array[j + 1]) {
-      let temp = array[j];
-      array[j] = array[j + 1];
-      array[j + 1] = temp;
-    }
-    
+const factorial = (num) => {
+  if(num<0){
+    return "value cannot be nagative"
   }
+  if(num===0 || num ===1){
+    return 1
+  }
+
+  return num* factorial(num-1)
+
 }
 
-console.log(array, "array");
-let secondLargestValue =  array.length-1;
+console.log(factorial(5));
