@@ -37,3 +37,6 @@ console.log(obj); // Output: { a: 2 }
   // obj = { b: 3 }; // Error: Assignment to constant variable
 }
 
+// Temperal dead zone mai error aise aata hai 
+console.log(x); // ReferenceError: Cannot access 'x' before initialization
+let x = 10;
